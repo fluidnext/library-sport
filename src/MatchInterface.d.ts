@@ -1,4 +1,4 @@
-import { TeamInterface } from "../team/TeamInterface";
+import { TeamInterface } from "./TeamInterface";
 export interface MatchInterface {
     /**
      *

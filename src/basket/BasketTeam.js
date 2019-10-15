@@ -1,4 +1,4 @@
-import { AbstractTeam } from '../team/AbstractTeam';
+import { AbstractTeam } from '../AbstractTeam';
 export class BasketTeam extends AbstractTeam {
     /**
      *
@@ -12,72 +12,37 @@ export class BasketTeam extends AbstractTeam {
          * @type {Array<PlayerInterface>}
          */
         this.players = [];
-        /**
-         *
-         * @param {string} name
-         */
-        this.setName = (name) => {
-            this.name = name;
-        };
-        /**
-         *
-         * @returns {string}
-         */
-        this.getName = () => {
-            return this.name;
-        };
-        /**
-         *
-         * @returns {boolean}
-         */
-        this.isMainTeam = () => {
-            return this.main;
-        };
-        /**
-         *
-         * @param {PlayerInterface} player
-         */
-        this.addPlayer = (player) => {
-            this.players.push(player);
-        };
-        /**
-         *
-         * @param {PlayerInterface} player
-         * @param {number} index
-         */
-        this.setPlayerByIndex = (player, index) => {
-            this.players[index] = player;
-        };
-        /**
-         *
-         * @returns {Array<PlayerInterface>}
-         */
-        this.getPlayers = () => {
-            return this.players;
-        };
-        /**
-         *
-         * @param {number} index
-         */
-        this.getPlayerByIndex = (index) => {
-            return this.players[index];
-        };
-        /**
-         *
-         * @returns {number}
-         */
-        this.getPoints = () => {
-            return this.points;
-        };
         this.name = name;
-        this.main = main;
+        this.main = main === true ? main : false;
     }
     /**
      *
-     * @param {number} points
+     * @param {PlayerInterface} player
+     * @param {number} index
+     * @returns {BasketTeam}
      */
-    addPoints(points) {
-        this.points += points;
+    setPlayerByIndex(player, index) {
+        this.players[index] = player;
+        return this;
+    }
+    /**
+     *
+     * @param {number} index
+     * @returns {PlayerInterface}
+     */
+    getPlayerByIndex(index) {
+        return this.players[index];
+    }
+    /**
+     *
+     * @returns {number}
+     */
+    getTotalScore() {
+        let result = 0;
+        this.scores.forEach(score => {
+            result += score.getValue();
+        });
+        return result;
     }
 }
 //# sourceMappingURL=BasketTeam.js.map

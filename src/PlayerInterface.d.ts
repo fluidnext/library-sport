@@ -1,3 +1,4 @@
+import { ScoreInterface } from "./ScoreInterface";
 export interface PlayerInterface {
     /**
      *
@@ -8,7 +9,7 @@ export interface PlayerInterface {
      *
      * @return {string}
      */
-    getFirstName: () => string;
+    getFirstName(): string;
     /**
      *
      * @param {string} name
@@ -18,7 +19,7 @@ export interface PlayerInterface {
      *
      * @return {string}
      */
-    getLastName: () => string;
+    getLastName(): string;
     /**
      *
      * @param {string} name
@@ -28,25 +29,30 @@ export interface PlayerInterface {
      *
      * @return {string}
      */
-    getShirtName: () => string;
+    getShirtName(): string;
     /**
      *
-     * @param {any} number
+     * @param {string} number
      */
-    setShirtNumber(number: any): any;
+    setShirtNumber(number: string): any;
     /**
      *
      * @return {string}
      */
-    getShirtNumber: () => string;
+    getShirtNumber(): string;
     /**
      *
-     * @param {any} points
+     * @param {ScoreInterface} score
      */
-    addPoints(points: any): any;
+    addScore(score: ScoreInterface): any;
     /**
      *
-     * @returns {any}
+     * @param {number} index
      */
-    getPoints: () => any;
+    removeScore(index: number): any;
+    /**
+     *
+     * @returns {Array<ScoreInterface>}
+     */
+    getScores(): Array<ScoreInterface>;
 }

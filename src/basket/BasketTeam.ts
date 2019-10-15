@@ -1,8 +1,9 @@
-import { AbstractTeam } from '../team/AbstractTeam';
-import { PlayerInterface } from '../player/PlayerInterface';
-import { TeamInterface } from '../team/TeamInterface';
+import { AbstractTeam } from '../AbstractTeam';
+import { PlayerInterface } from '../PlayerInterface';
+import { TeamInterface } from '../TeamInterface';
+import { ScoreInterface } from '../ScoreInterface';
 
-export class BasketTeam extends AbstractTeam {
+export class BasketTeam extends AbstractTeam implements TeamInterface {
 
     /**
      * 
@@ -24,9 +25,9 @@ export class BasketTeam extends AbstractTeam {
 
     /**
      * 
-     * @type {number}
+     * @type {Array<ScoreInterface>}
      */
-    protected points: number;
+    protected scores: Array<ScoreInterface>;
 
     /**
      * 
@@ -36,79 +37,38 @@ export class BasketTeam extends AbstractTeam {
     constructor(name: string, main: boolean){
         super();
         this.name = name;
-        this.main = main;
-    }
-
-    /**
-     * 
-     * @param {string} name
-     */
-    public setName = (name: string) => {
-        this.name = name;
-    }
-
-    /**
-     * 
-     * @returns {string}
-     */
-    public getName = () => {
-        return this.name;
-    }
-
-    /**
-     * 
-     * @returns {boolean}
-     */
-    public isMainTeam = () => {
-        return this.main;
-    }
-    
-    /**
-     * 
-     * @param {PlayerInterface} player
-     */
-    public addPlayer = (player: PlayerInterface) => {
-        this.players.push(player);
+        this.main = main === true ? main : false;
     }
 
     /**
      * 
      * @param {PlayerInterface} player
      * @param {number} index
+     * @returns {BasketTeam}
      */
-    public setPlayerByIndex = (player: PlayerInterface, index: number) => {
+    public setPlayerByIndex(player: PlayerInterface, index: number): BasketTeam {
         this.players[index] = player;
-    }
-
-    /**
-     * 
-     * @returns {Array<PlayerInterface>}
-     */
-    public getPlayers = () => {
-        return this.players;
+        return this;
     }
 
     /**
      * 
      * @param {number} index
+     * @returns {PlayerInterface}
      */
-    public getPlayerByIndex = (index: number) => {
+    public getPlayerByIndex(index: number): PlayerInterface {
         return this.players[index];
-    }
-
-    /**
-     * 
-     * @param {number} points
-     */
-    public addPoints(points: number) {
-        this.points += points;
     }
 
     /**
      * 
      * @returns {number}
      */
-    public getPoints = () => {
-        return this.points;
+    public getTotalScore(): number {
+        let result = 0;
+        this.scores.forEach(score => {
+            result += score.getValue();
+        });
+        return result;
     }
 }

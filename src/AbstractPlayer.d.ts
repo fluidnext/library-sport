@@ -1,5 +1,5 @@
-import { PlayerInterface } from "./PlayerInterface";
-export declare abstract class AbstractPlayer implements PlayerInterface {
+import { ScoreInterface } from "./ScoreInterface";
+export declare abstract class AbstractPlayer {
     /**
      *
      * @type {string}
@@ -22,14 +22,15 @@ export declare abstract class AbstractPlayer implements PlayerInterface {
     protected shirtNumber: string;
     /**
      *
-     * @type {any}
+     * @type {Array<ScoreInterface>}
      */
-    protected points: any;
+    protected scores: Array<ScoreInterface>;
     /**
      *
      * @param {string} name
+     * @returns {AbstractPlayer}
      */
-    abstract setFirstName(name: string): any;
+    setFirstName(name: string): AbstractPlayer;
     /**
      *
      * @returns {string}
@@ -38,8 +39,9 @@ export declare abstract class AbstractPlayer implements PlayerInterface {
     /**
      *
      * @param {string} name
+     * @returns {AbstractPlayer}
      */
-    abstract setLastName(name: string): any;
+    setLastName(name: string): AbstractPlayer;
     /**
      *
      * @returns {string}
@@ -48,8 +50,9 @@ export declare abstract class AbstractPlayer implements PlayerInterface {
     /**
      *
      * @param {string} name
+     * @returns {AbstractPlayer}
      */
-    abstract setShirtName(name: string): any;
+    setShirtName(name: string): AbstractPlayer;
     /**
      *
      * @returns {string}
@@ -57,9 +60,10 @@ export declare abstract class AbstractPlayer implements PlayerInterface {
     getShirtName: () => string;
     /**
      *
-     * @param {any} number
+     * @param {string} number
+     * @returns {AbstractPlayer}
      */
-    abstract setShirtNumber(number: any): any;
+    setShirtNumber(number: string): AbstractPlayer;
     /**
      *
      * @returns {string}
@@ -67,12 +71,19 @@ export declare abstract class AbstractPlayer implements PlayerInterface {
     getShirtNumber: () => string;
     /**
      *
-     * @param {any} points
+     * @param {ScoreInterface} score
+     * @returns {AbstractPlayer}
      */
-    abstract addPoints(points: any): any;
+    addScore(score: ScoreInterface): AbstractPlayer;
     /**
      *
-     * @returns {any}
+     * @param {number} index
+     * @returns {AbstractPlayer}
      */
-    getPoints: () => any;
+    removeScore(index: number): AbstractPlayer;
+    /**
+     *
+     * @returns {Array<ScoreInterface>}
+     */
+    getScores: () => ScoreInterface[];
 }

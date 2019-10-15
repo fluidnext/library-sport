@@ -1,7 +1,6 @@
-import { MatchInterface } from './MatchInterface';
-import { TeamInterface } from '../team/TeamInterface';
+import { TeamInterface } from './TeamInterface';
 
-export abstract class AbstractMatch implements MatchInterface{
+export abstract class AbstractMatch{
     
     /**
      * 
@@ -18,17 +17,21 @@ export abstract class AbstractMatch implements MatchInterface{
     /**
      * 
      * @param {TeamInterface} team
+     * @returns {AbstractMatch}
      */
-    public setHomeTeam(team: TeamInterface) {
+    public setHomeTeam(team: TeamInterface): AbstractMatch {
         this.homeTeam = team;
+        return this;
     }
 
     /**
      * 
      * @param {TeamInterface} team
+     * @returns {AbstractMatch}
      */
-    public setGuestTeam(team: TeamInterface) {
+    public setGuestTeam(team: TeamInterface): AbstractMatch {
         this.guestTeam = team;
+        return this;
     }
 
     /**

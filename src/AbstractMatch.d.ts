@@ -1,6 +1,5 @@
-import { MatchInterface } from './MatchInterface';
-import { TeamInterface } from '../team/TeamInterface';
-export declare abstract class AbstractMatch implements MatchInterface {
+import { TeamInterface } from './TeamInterface';
+export declare abstract class AbstractMatch {
     /**
      *
      * @type {TeamInterface}
@@ -14,13 +13,15 @@ export declare abstract class AbstractMatch implements MatchInterface {
     /**
      *
      * @param {TeamInterface} team
+     * @returns {AbstractMatch}
      */
-    setHomeTeam(team: TeamInterface): void;
+    setHomeTeam(team: TeamInterface): AbstractMatch;
     /**
      *
      * @param {TeamInterface} team
+     * @returns {AbstractMatch}
      */
-    setGuestTeam(team: TeamInterface): void;
+    setGuestTeam(team: TeamInterface): AbstractMatch;
     /**
      *
      * @returns {TeamInterface}

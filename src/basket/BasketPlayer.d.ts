@@ -1,5 +1,7 @@
-import { AbstractPlayer } from "../player/AbstractPlayer";
-export declare class BasketPlayer extends AbstractPlayer {
+import { AbstractPlayer } from "../AbstractPlayer";
+import { PlayerInterface } from "../PlayerInterface";
+import { ScoreInterface } from "../ScoreInterface";
+export declare class BasketPlayer extends AbstractPlayer implements PlayerInterface {
     /**
      *
      * @type {string}
@@ -22,58 +24,17 @@ export declare class BasketPlayer extends AbstractPlayer {
     protected shirtNumber: string;
     /**
      *
-     * @type {number}
+     * @type {Array<ScoreInterface>}
      */
-    protected points: number;
+    protected scores: Array<ScoreInterface>;
     /**
      *
-     * @param {string} name
      * @param {string} number
      */
-    constructor(name: string, number: string);
+    constructor(number: string);
     /**
      *
-     * @param {string} name
+     * @returns {number}
      */
-    setFirstName: (name: string) => void;
-    /**
-     *
-     * @returns {string}
-     */
-    getFirstName: () => string;
-    /**
-     *
-     * @param  {string} name
-     */
-    setLastName: (name: string) => void;
-    /**
-     *
-     * @returns {string}
-     */
-    getLastName: () => string;
-    /**
-     *
-     * @param  {string} name
-     */
-    setShirtName: (name: string) => void;
-    /**
-     *
-     * @returns {string}
-     */
-    getShirtName: () => string;
-    /**
-     *
-     * @param  {string} number
-     */
-    setShirtNumber: (number: string) => void;
-    /**
-     *
-     * @returns {string}
-     */
-    getShirtNumber: () => string;
-    /**
-     *
-     * @param  {number} points
-     */
-    addPoints(points: number): void;
+    getTotalScore(): number;
 }

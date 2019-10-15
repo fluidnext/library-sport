@@ -1,6 +1,8 @@
-import { AbstractPlayer } from "../player/AbstractPlayer";
+import { AbstractPlayer } from "../AbstractPlayer";
+import { PlayerInterface } from "../PlayerInterface";
+import { ScoreInterface } from "../ScoreInterface";
 
-export class BasketPlayer extends AbstractPlayer{
+export class BasketPlayer extends AbstractPlayer implements PlayerInterface {
 
     /**
      * 
@@ -28,91 +30,28 @@ export class BasketPlayer extends AbstractPlayer{
 
     /**
      * 
-     * @type {number}
+     * @type {Array<ScoreInterface>}
      */
-    protected points: number;
+    protected scores: Array<ScoreInterface>;
 
     /**
      * 
-     * @param {string} name
      * @param {string} number
      */
-    constructor(name: string, number: string) {
+    constructor(number: string) {
         super();
-        this.shirtName = name;
         this.shirtNumber = number;
     }
 
     /**
      * 
-     * @param {string} name
+     * @returns {number}
      */
-    public setFirstName = (name: string) => {
-        this.firstName = name;
-    }
-
-    /**
-     * 
-     * @returns {string}
-     */
-    public getFirstName = () => {
-        return this.firstName;
-    }
-
-    /**
-     * 
-     * @param  {string} name
-     */
-    public setLastName = (name: string) => {
-        this.lastName = name;
-    }
-
-    /**
-     * 
-     * @returns {string}
-     */
-    public getLastName = () => {
-        return this.lastName;
-    }
-    
-    
-    /**
-     * 
-     * @param  {string} name
-     */
-    public setShirtName = (name: string) => {
-        this.shirtName = name;
-    }
-
-    /**
-     * 
-     * @returns {string}
-     */
-    public getShirtName = () => {
-        return this.shirtName;
-    }
-
-    /**
-     * 
-     * @param  {string} number
-     */
-    public setShirtNumber = (number: string) => {
-        this.shirtNumber = number;
-    }
-
-    /**
-     * 
-     * @returns {string}
-     */
-    public getShirtNumber = () => {
-        return this.shirtNumber;
-    }
-
-    /**
-     * 
-     * @param  {number} points
-     */
-    public addPoints(points: number) {
-        this.points += points;
+    public getTotalScore(): number {
+        let result = 0;
+        this.scores.forEach(score => {
+            result += score.getValue();
+        });
+        return result;
     }
 };

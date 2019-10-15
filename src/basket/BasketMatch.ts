@@ -1,7 +1,8 @@
-import { AbstractMatch } from '../match/AbstractMatch';
-import { TeamInterface } from '../team/TeamInterface';
+import { AbstractMatch } from '../AbstractMatch';
+import { TeamInterface } from '../TeamInterface';
+import { MatchInterface } from '../MatchInterface';
 
-export class BasketMatch extends AbstractMatch{
+export class BasketMatch extends AbstractMatch implements MatchInterface{
     
     /**
      * 
@@ -22,38 +23,7 @@ export class BasketMatch extends AbstractMatch{
      */
     constructor(home: TeamInterface, guest: TeamInterface){
         super();
-        this.homeTeam
-    }
-
-    /**
-     * 
-     * @param  {TeamInterface} team
-     */
-    public setHomeTeam = (team: TeamInterface) => {
-        this.homeTeam = team;
-    }
-
-    /**
-     * 
-     * @returns {TeamInterface}
-     */
-    public getHomeTeam = () => {
-        return this.homeTeam;
-    }
-    
-    /**
-     * 
-     * @param  {TeamInterface} team
-     */
-    public setGuestTeam = (team: TeamInterface) => {
-        this.guestTeam = team;
-    }
-
-    /**
-     * 
-     * @returns {TeamInterface}
-     */
-    public getGuestTeam = () => {
-        return this.guestTeam;
+        this.homeTeam = home;
+        this.guestTeam = guest;
     }
 }
