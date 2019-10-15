@@ -18,17 +18,6 @@ export class BasketTeam extends AbstractTeam implements TeamInterface {
 
     /**
      * 
-     * @param {PlayerInterface} player
-     * @param {number} index
-     * @returns {BasketTeam}
-     */
-    public setPlayerByIndex(player: PlayerInterface, index: number): BasketTeam {
-        this.players[index] = player;
-        return this;
-    }
-
-    /**
-     * 
      * @param {string} number
      * @returns {PlayerInterface}
      */
