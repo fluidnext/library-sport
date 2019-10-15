@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const AbstractMatch_1 = require("../match/AbstractMatch");
+const AbstractMatch_1 = require("../AbstractMatch");
 class BasketMatch extends AbstractMatch_1.AbstractMatch {
     /**
      *
@@ -9,35 +9,8 @@ class BasketMatch extends AbstractMatch_1.AbstractMatch {
      */
     constructor(home, guest) {
         super();
-        /**
-         *
-         * @param  {TeamInterface} team
-         */
-        this.setHomeTeam = (team) => {
-            this.homeTeam = team;
-        };
-        /**
-         *
-         * @returns {TeamInterface}
-         */
-        this.getHomeTeam = () => {
-            return this.homeTeam;
-        };
-        /**
-         *
-         * @param  {TeamInterface} team
-         */
-        this.setGuestTeam = (team) => {
-            this.guestTeam = team;
-        };
-        /**
-         *
-         * @returns {TeamInterface}
-         */
-        this.getGuestTeam = () => {
-            return this.guestTeam;
-        };
-        this.homeTeam;
+        this.homeTeam = home;
+        this.guestTeam = guest;
     }
 }
 exports.BasketMatch = BasketMatch;

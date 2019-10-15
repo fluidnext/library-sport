@@ -1,26 +1,7 @@
-import { AbstractTeam } from '../team/AbstractTeam';
-import { PlayerInterface } from '../player/PlayerInterface';
-export declare class BasketTeam extends AbstractTeam {
-    /**
-     *
-     * @type {string}
-     */
-    protected name: string;
-    /**
-     *
-     * @type {boolean}
-     */
-    protected main: boolean;
-    /**
-     *
-     * @type {Array<PlayerInterface>}
-     */
-    protected players: Array<PlayerInterface>;
-    /**
-     *
-     * @type {number}
-     */
-    protected points: number;
+import { AbstractTeam } from '../AbstractTeam';
+import { PlayerInterface } from '../PlayerInterface';
+import { TeamInterface } from '../TeamInterface';
+export declare class BasketTeam extends AbstractTeam implements TeamInterface {
     /**
      *
      * @param {string} name
@@ -29,48 +10,20 @@ export declare class BasketTeam extends AbstractTeam {
     constructor(name: string, main: boolean);
     /**
      *
-     * @param {string} name
-     */
-    setName: (name: string) => void;
-    /**
-     *
-     * @returns {string}
-     */
-    getName: () => string;
-    /**
-     *
-     * @returns {boolean}
-     */
-    isMainTeam: () => boolean;
-    /**
-     *
-     * @param {PlayerInterface} player
-     */
-    addPlayer: (player: PlayerInterface) => void;
-    /**
-     *
      * @param {PlayerInterface} player
      * @param {number} index
+     * @returns {BasketTeam}
      */
-    setPlayerByIndex: (player: PlayerInterface, index: number) => void;
+    setPlayerByIndex(player: PlayerInterface, index: number): BasketTeam;
     /**
      *
-     * @returns {Array<PlayerInterface>}
+     * @param {string} number
+     * @returns {PlayerInterface}
      */
-    getPlayers: () => PlayerInterface[];
-    /**
-     *
-     * @param {number} index
-     */
-    getPlayerByIndex: (index: number) => PlayerInterface;
-    /**
-     *
-     * @param {number} points
-     */
-    addPoints(points: number): void;
+    getPlayerByNumber(number: string): PlayerInterface;
     /**
      *
      * @returns {number}
      */
-    getPoints: () => number;
+    getTotalScore(): number;
 }

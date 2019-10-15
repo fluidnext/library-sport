@@ -1,33 +1,10 @@
-import { AbstractTeam } from '../team/AbstractTeam';
-import { PlayerInterface } from '../player/PlayerInterface';
-import { TeamInterface } from '../team/TeamInterface';
+import { AbstractTeam } from '../AbstractTeam';
+import { PlayerInterface } from '../PlayerInterface';
+import { TeamInterface } from '../TeamInterface';
+import { ScoreInterface } from '../ScoreInterface';
 
-export class BasketTeam extends AbstractTeam {
-
-    /**
-     * 
-     * @type {string}
-     */
-    protected name: string;
-
-    /**
-     * 
-     * @type {boolean}
-     */
-    protected main: boolean;
-
-    /**
-     * 
-     * @type {Array<PlayerInterface>}
-     */
-    protected players: Array<PlayerInterface> = [];
-
-    /**
-     * 
-     * @type {number}
-     */
-    protected points: number;
-
+export class BasketTeam extends AbstractTeam implements TeamInterface {
+    
     /**
      * 
      * @param {string} name
@@ -36,79 +13,44 @@ export class BasketTeam extends AbstractTeam {
     constructor(name: string, main: boolean){
         super();
         this.name = name;
-        this.main = main;
-    }
-
-    /**
-     * 
-     * @param {string} name
-     */
-    public setName = (name: string) => {
-        this.name = name;
-    }
-
-    /**
-     * 
-     * @returns {string}
-     */
-    public getName = () => {
-        return this.name;
-    }
-
-    /**
-     * 
-     * @returns {boolean}
-     */
-    public isMainTeam = () => {
-        return this.main;
-    }
-    
-    /**
-     * 
-     * @param {PlayerInterface} player
-     */
-    public addPlayer = (player: PlayerInterface) => {
-        this.players.push(player);
+        this.main = main === true ? main : false;
     }
 
     /**
      * 
      * @param {PlayerInterface} player
      * @param {number} index
+     * @returns {BasketTeam}
      */
-    public setPlayerByIndex = (player: PlayerInterface, index: number) => {
+    public setPlayerByIndex(player: PlayerInterface, index: number): BasketTeam {
         this.players[index] = player;
+        return this;
     }
 
     /**
      * 
-     * @returns {Array<PlayerInterface>}
+     * @param {string} number
+     * @returns {PlayerInterface}
      */
-    public getPlayers = () => {
-        return this.players;
-    }
-
-    /**
-     * 
-     * @param {number} index
-     */
-    public getPlayerByIndex = (index: number) => {
-        return this.players[index];
-    }
-
-    /**
-     * 
-     * @param {number} points
-     */
-    public addPoints(points: number) {
-        this.points += points;
+    public getPlayerByNumber(number: string): PlayerInterface {
+        return this.players.find(pl => {
+            return pl.getShirtNumber() === number;
+        });
     }
 
     /**
      * 
      * @returns {number}
      */
-    public getPoints = () => {
-        return this.points;
+    public getTotalScore(): number {
+        let result = 0;
+        let playerResult = 0;
+        this.players.forEach(pl => {
+            pl.getScores().forEach(score => {
+                playerResult += score.getValue();
+            });
+            result += playerResult;
+        })
+        return result;
     }
 }
