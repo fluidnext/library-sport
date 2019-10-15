@@ -1,32 +1,6 @@
 import { AbstractPlayer } from "../AbstractPlayer";
 import { PlayerInterface } from "../PlayerInterface";
-import { ScoreInterface } from "../ScoreInterface";
 export declare class BasketPlayer extends AbstractPlayer implements PlayerInterface {
-    /**
-     *
-     * @type {string}
-     */
-    protected firstName: string;
-    /**
-     *
-     * @type {string}
-     */
-    protected lastName: string;
-    /**
-     *
-     * @type {string}
-     */
-    protected shirtName: string;
-    /**
-     *
-     * @type {string}
-     */
-    protected shirtNumber: string;
-    /**
-     *
-     * @type {Array<ScoreInterface>}
-     */
-    protected scores: Array<ScoreInterface>;
     /**
      *
      * @param {string} number
@@ -37,4 +11,9 @@ export declare class BasketPlayer extends AbstractPlayer implements PlayerInterf
      * @returns {number}
      */
     getTotalScore(): number;
+    /**
+     *
+     * @returns {BasketPlayer}
+     */
+    undoScore(): BasketPlayer;
 }

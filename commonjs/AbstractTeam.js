@@ -1,6 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class AbstractTeam {
+    constructor() {
+        /**
+         *
+         * @type {Array<ScoreInterface>}
+         */
+        this.scores = [];
+        /**
+         *
+         * @type {Array<PlayerInterface>}
+         */
+        this.players = [];
+    }
     /**
      *
      * @returns {boolean}
@@ -63,6 +75,18 @@ class AbstractTeam {
         return this;
     }
     ;
+    /**
+     *
+     * @param {PlayerInterface} player
+     * @returns {AbstractTeam}
+     */
+    removePlayer(player) {
+        let pl = this.players.find((pl) => {
+            return pl.getShirtNumber() === player.getShirtNumber();
+        });
+        this.players.splice(this.players.indexOf(pl), 1);
+        return this;
+    }
     /**
      *
      * @returns {Array<PlayerInterface>}

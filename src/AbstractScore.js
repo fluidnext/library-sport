@@ -30,21 +30,5 @@ export class AbstractScore {
     getTime() {
         return this.time;
     }
-    /**
-     *
-     * @param {string} id
-     * @returns {AbstractScore}
-     */
-    setPlayerId(id) {
-        this.playerId = id;
-        return this;
-    }
-    /**
-     *
-     * @returns {string}
-     */
-    getPlayerId() {
-        return this.playerId;
-    }
 }
 //# sourceMappingURL=AbstractScore.js.map

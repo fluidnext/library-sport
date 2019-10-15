@@ -14,12 +14,6 @@ export abstract class AbstractScore {
 
     /**
      * 
-     * @type {string}
-     */
-    protected playerId: string
-
-    /**
-     * 
      * @param {number} value
      */
     public setValue(value: number): AbstractScore {
@@ -49,25 +43,7 @@ export abstract class AbstractScore {
      * 
      * @returns {Date}
      */
-    public getTime() {
+    public getTime(): Date {
         return this.time;
-    }
-
-    /**
-     * 
-     * @param {string} id
-     * @returns {AbstractScore}
-     */
-    public setPlayerId(id: string) : AbstractScore {
-        this.playerId = id;
-        return this;
-    }
-
-    /**
-     * 
-     * @returns {string}
-     */
-    public getPlayerId() : string {
-        return this.playerId;
     }
 }

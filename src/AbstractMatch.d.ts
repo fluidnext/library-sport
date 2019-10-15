@@ -12,6 +12,11 @@ export declare abstract class AbstractMatch {
     protected guestTeam: TeamInterface;
     /**
      *
+     * @type {Date}
+     */
+    protected date: Date;
+    /**
+     *
      * @param {TeamInterface} team
      * @returns {AbstractMatch}
      */
@@ -26,10 +31,21 @@ export declare abstract class AbstractMatch {
      *
      * @returns {TeamInterface}
      */
-    getHomeTeam: () => TeamInterface;
+    getHomeTeam(): TeamInterface;
     /**
      *
      * @returns {TeamInterface}
      */
-    getGuestTeam: () => TeamInterface;
+    getGuestTeam(): TeamInterface;
+    /**
+     *
+     * @param {Date} date
+     * @returns {AbstractMatch}
+     */
+    setDate(date: Date): AbstractMatch;
+    /**
+     *
+     * @returns {Date}
+     */
+    getDate(): Date;
 }

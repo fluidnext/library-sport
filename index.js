@@ -1,5 +1,5 @@
 module.exports = {
-    BasketClass:{
+    Basket:{
         Match: require('./commonjs/basket/BasketMatch').BasketMatch,
         Team: require('./commonjs/basket/BasketTeam').BasketTeam,
         Player: require('./commonjs/basket/BasketPlayer').BasketPlayer,

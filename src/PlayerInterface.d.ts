@@ -3,8 +3,9 @@ export interface PlayerInterface {
     /**
      *
      * @param {string} name
+     * @returns {PlayerInterface}
      */
-    setFirstName(name: string): any;
+    setFirstName(name: string): PlayerInterface;
     /**
      *
      * @return {string}
@@ -13,8 +14,9 @@ export interface PlayerInterface {
     /**
      *
      * @param {string} name
+     * @returns {PlayerInterface}
      */
-    setLastName(name: string): any;
+    setLastName(name: string): PlayerInterface;
     /**
      *
      * @return {string}
@@ -23,8 +25,9 @@ export interface PlayerInterface {
     /**
      *
      * @param {string} name
+     * @returns {PlayerInterface}
      */
-    setShirtName(name: string): any;
+    setShirtName(name: string): PlayerInterface;
     /**
      *
      * @return {string}
@@ -33,8 +36,9 @@ export interface PlayerInterface {
     /**
      *
      * @param {string} number
+     * @returns {PlayerInterface}
      */
-    setShirtNumber(number: string): any;
+    setShirtNumber(number: string): PlayerInterface;
     /**
      *
      * @return {string}
@@ -43,13 +47,15 @@ export interface PlayerInterface {
     /**
      *
      * @param {ScoreInterface} score
+     * @returns {PlayerInterface}
      */
-    addScore(score: ScoreInterface): any;
+    addScore(score: ScoreInterface): PlayerInterface;
     /**
      *
      * @param {number} index
+     * @returns {PlayerInterface}
      */
-    removeScore(index: number): any;
+    removeScore(index: number): PlayerInterface;
     /**
      *
      * @returns {Array<ScoreInterface>}

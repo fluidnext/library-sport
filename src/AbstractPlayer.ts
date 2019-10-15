@@ -30,7 +30,7 @@ export abstract class AbstractPlayer{
      * 
      * @type {Array<ScoreInterface>}
      */
-    protected scores: Array<ScoreInterface>;
+    protected scores: Array<ScoreInterface> = [];
 
     /**
      * 
@@ -46,7 +46,7 @@ export abstract class AbstractPlayer{
      * 
      * @returns {string}
      */
-    public getFirstName = () => {
+    public getFirstName(): string {
         return this.firstName;
     };
 
@@ -64,7 +64,7 @@ export abstract class AbstractPlayer{
      *
      * @returns {string}
      */
-    public getLastName =  () => {
+    public getLastName(): string {
         return this.lastName;
     };
 
@@ -82,7 +82,7 @@ export abstract class AbstractPlayer{
      *
      * @returns {string}
      */
-    public getShirtName = () => {
+    public getShirtName(): string {
         return this.shirtName;
     };
 
@@ -100,7 +100,7 @@ export abstract class AbstractPlayer{
      *
      * @returns {string}
      */
-    public getShirtNumber = () => {
+    public getShirtNumber(): string {
         return this.shirtNumber;
     };
 
@@ -128,7 +128,7 @@ export abstract class AbstractPlayer{
      * 
      * @returns {Array<ScoreInterface>}
      */
-    public getScores = () => {
+    public getScores(): Array<ScoreInterface> {
         return this.scores;
     }
 }

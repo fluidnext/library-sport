@@ -53,7 +53,7 @@ export declare abstract class AbstractTeam {
      *
      * @returns {Array<ScoreInterface>}
      */
-    getScores(): ScoreInterface[];
+    getScores(): Array<ScoreInterface>;
     /**
      *
      * @param {PlayerInterface} player
@@ -62,7 +62,13 @@ export declare abstract class AbstractTeam {
     addPlayer(player: PlayerInterface): AbstractTeam;
     /**
      *
+     * @param {PlayerInterface} player
+     * @returns {AbstractTeam}
+     */
+    removePlayer(player: PlayerInterface): AbstractTeam;
+    /**
+     *
      * @returns {Array<PlayerInterface>}
      */
-    getPlayers(): PlayerInterface[];
+    getPlayers(): Array<PlayerInterface>;
 }

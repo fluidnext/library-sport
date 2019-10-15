@@ -19,6 +19,14 @@ export class BasketPlayer extends AbstractPlayer {
         });
         return result;
     }
+    /**
+     *
+     * @returns {BasketPlayer}
+     */
+    undoScore() {
+        this.removeScore(this.scores.length - 1);
+        return this;
+    }
 }
 ;
 //# sourceMappingURL=BasketPlayer.js.map

@@ -16,6 +16,12 @@ export abstract class AbstractMatch{
 
     /**
      * 
+     * @type {Date}
+     */
+    protected date: Date;
+
+    /**
+     * 
      * @param {TeamInterface} team
      * @returns {AbstractMatch}
      */
@@ -38,7 +44,7 @@ export abstract class AbstractMatch{
      * 
      * @returns {TeamInterface}
      */
-    public getHomeTeam = () => {
+    public getHomeTeam(): TeamInterface {
         return this.homeTeam;
     };
 
@@ -46,7 +52,25 @@ export abstract class AbstractMatch{
      * 
      * @returns {TeamInterface}
      */
-    public getGuestTeam = () => {
+    public getGuestTeam(): TeamInterface {
         return this.guestTeam;
     };
+
+    /**
+     * 
+     * @param {Date} date
+     * @returns {AbstractMatch}
+     */
+    public setDate(date: Date): AbstractMatch {
+        this.date = date;
+        return this;
+    }
+
+    /**
+     * 
+     * @returns {Date}
+     */
+    public getDate(): Date {
+        return this.date;
+    }
 }

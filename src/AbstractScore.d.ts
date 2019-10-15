@@ -11,11 +11,6 @@ export declare abstract class AbstractScore {
     protected time: Date;
     /**
      *
-     * @type {string}
-     */
-    protected playerId: string;
-    /**
-     *
      * @param {number} value
      */
     setValue(value: number): AbstractScore;
@@ -35,15 +30,4 @@ export declare abstract class AbstractScore {
      * @returns {Date}
      */
     getTime(): Date;
-    /**
-     *
-     * @param {string} id
-     * @returns {AbstractScore}
-     */
-    setPlayerId(id: string): AbstractScore;
-    /**
-     *
-     * @returns {string}
-     */
-    getPlayerId(): string;
 }

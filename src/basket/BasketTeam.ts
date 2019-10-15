@@ -4,31 +4,7 @@ import { TeamInterface } from '../TeamInterface';
 import { ScoreInterface } from '../ScoreInterface';
 
 export class BasketTeam extends AbstractTeam implements TeamInterface {
-
-    /**
-     * 
-     * @type {string}
-     */
-    protected name: string;
-
-    /**
-     * 
-     * @type {boolean}
-     */
-    protected main: boolean;
-
-    /**
-     * 
-     * @type {Array<PlayerInterface>}
-     */
-    protected players: Array<PlayerInterface> = [];
-
-    /**
-     * 
-     * @type {Array<ScoreInterface>}
-     */
-    protected scores: Array<ScoreInterface>;
-
+    
     /**
      * 
      * @param {string} name
@@ -53,11 +29,13 @@ export class BasketTeam extends AbstractTeam implements TeamInterface {
 
     /**
      * 
-     * @param {number} index
+     * @param {string} number
      * @returns {PlayerInterface}
      */
-    public getPlayerByIndex(index: number): PlayerInterface {
-        return this.players[index];
+    public getPlayerByNumber(number: string): PlayerInterface {
+        return this.players.find(pl => {
+            return pl.getShirtNumber() === number;
+        });
     }
 
     /**
@@ -66,9 +44,13 @@ export class BasketTeam extends AbstractTeam implements TeamInterface {
      */
     public getTotalScore(): number {
         let result = 0;
-        this.scores.forEach(score => {
-            result += score.getValue();
-        });
+        let playerResult = 0;
+        this.players.forEach(pl => {
+            pl.getScores().forEach(score => {
+                playerResult += score.getValue();
+            });
+            result += playerResult;
+        })
         return result;
     }
 }

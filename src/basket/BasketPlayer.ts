@@ -6,36 +6,6 @@ export class BasketPlayer extends AbstractPlayer implements PlayerInterface {
 
     /**
      * 
-     * @type {string}
-     */
-    protected firstName: string;
-
-    /**
-     * 
-     * @type {string}
-     */
-    protected lastName: string;
-
-    /**
-     * 
-     * @type {string}
-     */
-    protected shirtName: string;
-
-    /**
-     * 
-     * @type {string}
-     */
-    protected shirtNumber: string;
-
-    /**
-     * 
-     * @type {Array<ScoreInterface>}
-     */
-    protected scores: Array<ScoreInterface>;
-
-    /**
-     * 
      * @param {string} number
      */
     constructor(number: string) {
@@ -53,5 +23,14 @@ export class BasketPlayer extends AbstractPlayer implements PlayerInterface {
             result += score.getValue();
         });
         return result;
+    }
+
+    /**
+     * 
+     * @returns {BasketPlayer}
+     */
+    public undoScore(): BasketPlayer{
+        this.removeScore(this.scores.length -1);
+        return this;
     }
 };

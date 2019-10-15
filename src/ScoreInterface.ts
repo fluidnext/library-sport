@@ -3,8 +3,9 @@ export interface ScoreInterface {
     /**
      * 
      * @param {number} value
+     * @returns {ScoreInterface}
      */
-    setValue(value: number);
+    setValue(value: number): ScoreInterface;
 
     /**
      * 
@@ -15,24 +16,13 @@ export interface ScoreInterface {
     /**
      * 
      * @param {Date} date
+     * @returns {ScoreInterface}
      */
-    setTime(date: Date);
+    setTime(date: Date): ScoreInterface;
 
     /**
      * 
      * @returns {Date}
      */
     getTime(): Date;
-
-    /**
-     * 
-     * @param {string} id
-     */
-    setPlayerId(id: string);
-
-    /**
-     * 
-     * @returns {string}
-     */
-    getPlayerId():string;
 }

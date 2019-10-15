@@ -1,20 +1,4 @@
 export class AbstractMatch {
-    constructor() {
-        /**
-         *
-         * @returns {TeamInterface}
-         */
-        this.getHomeTeam = () => {
-            return this.homeTeam;
-        };
-        /**
-         *
-         * @returns {TeamInterface}
-         */
-        this.getGuestTeam = () => {
-            return this.guestTeam;
-        };
-    }
     /**
      *
      * @param {TeamInterface} team
@@ -32,6 +16,38 @@ export class AbstractMatch {
     setGuestTeam(team) {
         this.guestTeam = team;
         return this;
+    }
+    /**
+     *
+     * @returns {TeamInterface}
+     */
+    getHomeTeam() {
+        return this.homeTeam;
+    }
+    ;
+    /**
+     *
+     * @returns {TeamInterface}
+     */
+    getGuestTeam() {
+        return this.guestTeam;
+    }
+    ;
+    /**
+     *
+     * @param {Date} date
+     * @returns {AbstractMatch}
+     */
+    setDate(date) {
+        this.date = date;
+        return this;
+    }
+    /**
+     *
+     * @returns {Date}
+     */
+    getDate() {
+        return this.date;
     }
 }
 //# sourceMappingURL=AbstractMatch.js.map

@@ -4,9 +4,10 @@ export interface PlayerInterface {
 
     /**
      * 
-     * @param {string} name 
+     * @param {string} name
+     * @returns {PlayerInterface}
      */
-    setFirstName(name: string);
+    setFirstName(name: string): PlayerInterface;
 
     /**
      * 
@@ -17,8 +18,9 @@ export interface PlayerInterface {
     /**
      * 
      * @param {string} name
+     * @returns {PlayerInterface}
      */
-    setLastName(name: string);
+    setLastName(name: string): PlayerInterface;
     
     /**
      * 
@@ -29,8 +31,9 @@ export interface PlayerInterface {
     /**
      * 
      * @param {string} name
+     * @returns {PlayerInterface}
      */
-    setShirtName(name: string);
+    setShirtName(name: string): PlayerInterface;
 
     /**
      * 
@@ -41,8 +44,9 @@ export interface PlayerInterface {
     /**
      * 
      * @param {string} number
+     * @returns {PlayerInterface}
      */
-    setShirtNumber(number: string);
+    setShirtNumber(number: string): PlayerInterface;
 
     /**
      * 
@@ -53,14 +57,16 @@ export interface PlayerInterface {
     /**
      * 
      * @param {ScoreInterface} score
+     * @returns {PlayerInterface}
      */
-    addScore(score: ScoreInterface);
+    addScore(score: ScoreInterface): PlayerInterface;
 
     /**
      * 
      * @param {number} index
+     * @returns {PlayerInterface}
      */
-    removeScore(index: number);
+    removeScore(index: number): PlayerInterface;
 
     /**
      * 

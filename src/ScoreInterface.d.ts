@@ -2,8 +2,9 @@ export interface ScoreInterface {
     /**
      *
      * @param {number} value
+     * @returns {ScoreInterface}
      */
-    setValue(value: number): any;
+    setValue(value: number): ScoreInterface;
     /**
      *
      * @returns {number}
@@ -12,21 +13,12 @@ export interface ScoreInterface {
     /**
      *
      * @param {Date} date
+     * @returns {ScoreInterface}
      */
-    setTime(date: Date): any;
+    setTime(date: Date): ScoreInterface;
     /**
      *
      * @returns {Date}
      */
     getTime(): Date;
-    /**
-     *
-     * @param {string} id
-     */
-    setPlayerId(id: string): any;
-    /**
-     *
-     * @returns {string}
-     */
-    getPlayerId(): string;
 }

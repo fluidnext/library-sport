@@ -21,6 +21,14 @@ class BasketPlayer extends AbstractPlayer_1.AbstractPlayer {
         });
         return result;
     }
+    /**
+     *
+     * @returns {BasketPlayer}
+     */
+    undoScore() {
+        this.removeScore(this.scores.length - 1);
+        return this;
+    }
 }
 exports.BasketPlayer = BasketPlayer;
 ;

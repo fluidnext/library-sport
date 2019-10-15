@@ -1,28 +1,7 @@
 import { AbstractTeam } from '../AbstractTeam';
 import { PlayerInterface } from '../PlayerInterface';
 import { TeamInterface } from '../TeamInterface';
-import { ScoreInterface } from '../ScoreInterface';
 export declare class BasketTeam extends AbstractTeam implements TeamInterface {
-    /**
-     *
-     * @type {string}
-     */
-    protected name: string;
-    /**
-     *
-     * @type {boolean}
-     */
-    protected main: boolean;
-    /**
-     *
-     * @type {Array<PlayerInterface>}
-     */
-    protected players: Array<PlayerInterface>;
-    /**
-     *
-     * @type {Array<ScoreInterface>}
-     */
-    protected scores: Array<ScoreInterface>;
     /**
      *
      * @param {string} name
@@ -38,10 +17,10 @@ export declare class BasketTeam extends AbstractTeam implements TeamInterface {
     setPlayerByIndex(player: PlayerInterface, index: number): BasketTeam;
     /**
      *
-     * @param {number} index
+     * @param {string} number
      * @returns {PlayerInterface}
      */
-    getPlayerByIndex(index: number): PlayerInterface;
+    getPlayerByNumber(number: string): PlayerInterface;
     /**
      *
      * @returns {number}

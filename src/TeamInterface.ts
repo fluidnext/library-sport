@@ -6,42 +6,53 @@ export interface TeamInterface {
     /**
      * 
      * @param {string} name
+     * @returns {TeamInterface}
      */
-    setName(name: string);
+    setName(name: string): TeamInterface;
 
     /**
      * 
      * @returns {string}
      */
-    getName():string;
+    getName(): string;
     
     /**
      * 
      * @param {ScoreInterface} score
+     * @returns {TeamInterface}
      */
-    addScore(score: ScoreInterface);
+    addScore(score: ScoreInterface): TeamInterface;
 
     /**
      * 
      * @param {number} index
+     * @returns {TeamInterface}
      */
-    removeScore(index: number);
+    removeScore(index: number): TeamInterface;
 
     /**
      * 
      * @returns {Array<ScoreInterface>}
      */
-    getScores():Array<ScoreInterface>;
+    getScores(): Array<ScoreInterface>;
 
     /**
      * 
      * @param {PlayerInterface} player
+     * @returns {TeamInterface}
      */
-    addPlayer(player: PlayerInterface);
+    addPlayer(player: PlayerInterface): TeamInterface;
+
+    /**
+     * 
+     * @param {PlayerInterface} player
+     * @returns {TeamInterface}
+     */
+    removePlayer(player: PlayerInterface): TeamInterface;
 
     /**
      * 
      * @returns {Array<PlayerInterface>}
      */
-    getPlayers():Array<PlayerInterface>;
+    getPlayers(): Array<PlayerInterface>;
 }

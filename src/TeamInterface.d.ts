@@ -4,8 +4,9 @@ export interface TeamInterface {
     /**
      *
      * @param {string} name
+     * @returns {TeamInterface}
      */
-    setName(name: string): any;
+    setName(name: string): TeamInterface;
     /**
      *
      * @returns {string}
@@ -14,13 +15,15 @@ export interface TeamInterface {
     /**
      *
      * @param {ScoreInterface} score
+     * @returns {TeamInterface}
      */
-    addScore(score: ScoreInterface): any;
+    addScore(score: ScoreInterface): TeamInterface;
     /**
      *
      * @param {number} index
+     * @returns {TeamInterface}
      */
-    removeScore(index: number): any;
+    removeScore(index: number): TeamInterface;
     /**
      *
      * @returns {Array<ScoreInterface>}
@@ -29,8 +32,15 @@ export interface TeamInterface {
     /**
      *
      * @param {PlayerInterface} player
+     * @returns {TeamInterface}
      */
-    addPlayer(player: PlayerInterface): any;
+    addPlayer(player: PlayerInterface): TeamInterface;
+    /**
+     *
+     * @param {PlayerInterface} player
+     * @returns {TeamInterface}
+     */
+    removePlayer(player: PlayerInterface): TeamInterface;
     /**
      *
      * @returns {Array<PlayerInterface>}

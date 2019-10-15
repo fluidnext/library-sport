@@ -4,39 +4,9 @@ class AbstractPlayer {
     constructor() {
         /**
          *
-         * @returns {string}
+         * @type {Array<ScoreInterface>}
          */
-        this.getFirstName = () => {
-            return this.firstName;
-        };
-        /**
-         *
-         * @returns {string}
-         */
-        this.getLastName = () => {
-            return this.lastName;
-        };
-        /**
-         *
-         * @returns {string}
-         */
-        this.getShirtName = () => {
-            return this.shirtName;
-        };
-        /**
-         *
-         * @returns {string}
-         */
-        this.getShirtNumber = () => {
-            return this.shirtNumber;
-        };
-        /**
-         *
-         * @returns {Array<ScoreInterface>}
-         */
-        this.getScores = () => {
-            return this.scores;
-        };
+        this.scores = [];
     }
     /**
      *
@@ -46,6 +16,14 @@ class AbstractPlayer {
     setFirstName(name) {
         this.firstName = name;
         return this;
+    }
+    ;
+    /**
+     *
+     * @returns {string}
+     */
+    getFirstName() {
+        return this.firstName;
     }
     ;
     /**
@@ -60,6 +38,14 @@ class AbstractPlayer {
     ;
     /**
      *
+     * @returns {string}
+     */
+    getLastName() {
+        return this.lastName;
+    }
+    ;
+    /**
+     *
      * @param {string} name
      * @returns {AbstractPlayer}
      */
@@ -70,12 +56,28 @@ class AbstractPlayer {
     ;
     /**
      *
+     * @returns {string}
+     */
+    getShirtName() {
+        return this.shirtName;
+    }
+    ;
+    /**
+     *
      * @param {string} number
      * @returns {AbstractPlayer}
      */
     setShirtNumber(number) {
         this.shirtNumber = number;
         return this;
+    }
+    ;
+    /**
+     *
+     * @returns {string}
+     */
+    getShirtNumber() {
+        return this.shirtNumber;
     }
     ;
     /**
@@ -96,6 +98,13 @@ class AbstractPlayer {
     removeScore(index) {
         this.scores.splice(index, 1);
         return this;
+    }
+    /**
+     *
+     * @returns {Array<ScoreInterface>}
+     */
+    getScores() {
+        return this.scores;
     }
 }
 exports.AbstractPlayer = AbstractPlayer;

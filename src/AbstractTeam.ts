@@ -19,19 +19,19 @@ export abstract class AbstractTeam{
      * 
      * @type {Array<ScoreInterface>}
      */
-    protected scores: Array<ScoreInterface>;
+    protected scores: Array<ScoreInterface> = [];
 
     /**
      * 
      * @type {Array<PlayerInterface>}
      */
-    protected players: Array<PlayerInterface>
+    protected players: Array<PlayerInterface> = [];
 
     /**
      * 
      * @returns {boolean}
      */
-    public isMainTeam() {
+    public isMainTeam(): boolean {
         return this.main;
     }
 
@@ -49,7 +49,7 @@ export abstract class AbstractTeam{
      * 
      * @returns {string}
      */
-    public getName() {
+    public getName(): string {
         return this.name;
     };
 
@@ -77,7 +77,7 @@ export abstract class AbstractTeam{
      * 
      * @returns {Array<ScoreInterface>}
      */
-    public getScores() {
+    public getScores(): Array<ScoreInterface> {
         return this.scores;
     };
 
@@ -93,9 +93,22 @@ export abstract class AbstractTeam{
 
     /**
      * 
+     * @param {PlayerInterface} player
+     * @returns {AbstractTeam}
+     */
+    public removePlayer(player: PlayerInterface): AbstractTeam {
+        let pl = this.players.find((pl) => {
+            return pl.getShirtNumber() === player.getShirtNumber();
+        });
+        this.players.splice(this.players.indexOf(pl), 1);
+        return this;
+    }
+
+    /**
+     * 
      * @returns {Array<PlayerInterface>}
      */
-    public getPlayers() {
+    public getPlayers(): Array<PlayerInterface> {
         return this.players;
     };
 }

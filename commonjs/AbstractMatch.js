@@ -1,22 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class AbstractMatch {
-    constructor() {
-        /**
-         *
-         * @returns {TeamInterface}
-         */
-        this.getHomeTeam = () => {
-            return this.homeTeam;
-        };
-        /**
-         *
-         * @returns {TeamInterface}
-         */
-        this.getGuestTeam = () => {
-            return this.guestTeam;
-        };
-    }
     /**
      *
      * @param {TeamInterface} team
@@ -34,6 +18,38 @@ class AbstractMatch {
     setGuestTeam(team) {
         this.guestTeam = team;
         return this;
+    }
+    /**
+     *
+     * @returns {TeamInterface}
+     */
+    getHomeTeam() {
+        return this.homeTeam;
+    }
+    ;
+    /**
+     *
+     * @returns {TeamInterface}
+     */
+    getGuestTeam() {
+        return this.guestTeam;
+    }
+    ;
+    /**
+     *
+     * @param {Date} date
+     * @returns {AbstractMatch}
+     */
+    setDate(date) {
+        this.date = date;
+        return this;
+    }
+    /**
+     *
+     * @returns {Date}
+     */
+    getDate() {
+        return this.date;
     }
 }
 exports.AbstractMatch = AbstractMatch;

@@ -9,11 +9,6 @@ class BasketTeam extends AbstractTeam_1.AbstractTeam {
      */
     constructor(name, main) {
         super();
-        /**
-         *
-         * @type {Array<PlayerInterface>}
-         */
-        this.players = [];
         this.name = name;
         this.main = main === true ? main : false;
     }
@@ -29,11 +24,13 @@ class BasketTeam extends AbstractTeam_1.AbstractTeam {
     }
     /**
      *
-     * @param {number} index
+     * @param {string} number
      * @returns {PlayerInterface}
      */
-    getPlayerByIndex(index) {
-        return this.players[index];
+    getPlayerByNumber(number) {
+        return this.players.find(pl => {
+            return pl.getShirtNumber() === number;
+        });
     }
     /**
      *
@@ -41,8 +38,12 @@ class BasketTeam extends AbstractTeam_1.AbstractTeam {
      */
     getTotalScore() {
         let result = 0;
-        this.scores.forEach(score => {
-            result += score.getValue();
+        let playerResult = 0;
+        this.players.forEach(pl => {
+            pl.getScores().forEach(score => {
+                playerResult += score.getValue();
+            });
+            result += playerResult;
         });
         return result;
     }

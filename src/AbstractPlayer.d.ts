@@ -35,7 +35,7 @@ export declare abstract class AbstractPlayer {
      *
      * @returns {string}
      */
-    getFirstName: () => string;
+    getFirstName(): string;
     /**
      *
      * @param {string} name
@@ -46,7 +46,7 @@ export declare abstract class AbstractPlayer {
      *
      * @returns {string}
      */
-    getLastName: () => string;
+    getLastName(): string;
     /**
      *
      * @param {string} name
@@ -57,7 +57,7 @@ export declare abstract class AbstractPlayer {
      *
      * @returns {string}
      */
-    getShirtName: () => string;
+    getShirtName(): string;
     /**
      *
      * @param {string} number
@@ -68,7 +68,7 @@ export declare abstract class AbstractPlayer {
      *
      * @returns {string}
      */
-    getShirtNumber: () => string;
+    getShirtNumber(): string;
     /**
      *
      * @param {ScoreInterface} score
@@ -85,5 +85,5 @@ export declare abstract class AbstractPlayer {
      *
      * @returns {Array<ScoreInterface>}
      */
-    getScores: () => ScoreInterface[];
+    getScores(): Array<ScoreInterface>;
 }
