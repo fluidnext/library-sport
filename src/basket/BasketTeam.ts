@@ -4,17 +4,6 @@ import { TeamInterface } from '../TeamInterface';
 import { ScoreInterface } from '../ScoreInterface';
 
 export class BasketTeam extends AbstractTeam implements TeamInterface {
-    
-    /**
-     * 
-     * @param {string} name
-     * @param {boolean} main
-     */
-    constructor(name: string, main: boolean){
-        super();
-        this.name = name;
-        this.main = main === true ? main : false;
-    }
 
     /**
      * 

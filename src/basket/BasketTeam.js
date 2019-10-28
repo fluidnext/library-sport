@@ -2,16 +2,6 @@ import { AbstractTeam } from '../AbstractTeam';
 export class BasketTeam extends AbstractTeam {
     /**
      *
-     * @param {string} name
-     * @param {boolean} main
-     */
-    constructor(name, main) {
-        super();
-        this.name = name;
-        this.main = main === true ? main : false;
-    }
-    /**
-     *
      * @param {string} number
      * @returns {PlayerInterface}
      */

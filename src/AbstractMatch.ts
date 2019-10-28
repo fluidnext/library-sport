@@ -1,7 +1,7 @@
 import { TeamInterface } from './TeamInterface';
 
 export abstract class AbstractMatch{
-    
+
     /**
      * 
      * @type {TeamInterface}
