@@ -1,26 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const AbstractTeam_1 = require("../AbstractTeam");
+/**
+ * @class SoccerTeam
+ */
 class SoccerTeam extends AbstractTeam_1.AbstractTeam {
     /**
-     *
-     * @param {string} name
-     * @param {boolean} main
+     * @inheritDoc
      */
-    constructor(name, main) {
-        super();
-        this.name = name;
-        this.main = main === true ? main : false;
-    }
-    /**
-     *
-     * @param {string} number
-     * @returns {PlayerInterface}
-     */
-    getPlayerByNumber(number) {
-        return this.players.find(pl => {
-            return pl.getShirtNumber() === number;
+    getScores() {
+        let scores = [];
+        this.players.forEach(player => {
+            if (player.getScores().length > 0) {
+                scores.concat(player.getScores());
+            }
         });
+        return scores;
     }
 }
 exports.SoccerTeam = SoccerTeam;

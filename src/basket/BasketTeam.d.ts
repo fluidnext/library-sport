@@ -1,16 +1,46 @@
 import { AbstractTeam } from '../AbstractTeam';
-import { PlayerInterface } from '../PlayerInterface';
 import { TeamInterface } from '../TeamInterface';
+import { ScoreInterface } from '../ScoreInterface';
 export declare class BasketTeam extends AbstractTeam implements TeamInterface {
     /**
-     *
-     * @param {string} number
-     * @returns {PlayerInterface}
+     * @type number
      */
-    getPlayerByNumber(number: string): PlayerInterface;
+    protected fouls: number;
     /**
-     *
+     * @type number
+     */
+    protected timeOut: number;
+    /**
+     * @type {Array<ScoreInterface>}
+     */
+    protected scores: Array<ScoreInterface>;
+    /**
      * @returns {number}
+     * TODO change name and shift to interface
      */
     getTotalScore(): number;
+    /**
+     * @inheritDoc
+     */
+    getScores(): any[];
+    /**
+     * @param {Array<ScoreInterface>} scores
+     */
+    setScores(scores: Array<ScoreInterface>): BasketTeam;
+    /**
+     * @return {number}
+     */
+    getTimeOut(): number;
+    /**
+     * @param {number} timeOut
+     */
+    setTimeOut(timeOut: number): this;
+    /**
+     * @return {number}
+     */
+    getFouls(): number;
+    /**
+     * @param {number} fouls
+     */
+    setFouls(fouls: number): this;
 }

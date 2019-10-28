@@ -1,28 +1,24 @@
 import { AbstractTeam } from "../AbstractTeam";
 import { TeamInterface } from "../TeamInterface";
-import { PlayerInterface } from "../PlayerInterface";
+import {BasketTeam} from "../basket/BasketTeam";
 
+/**
+ * @class SoccerTeam
+ */
 export class SoccerTeam extends AbstractTeam implements TeamInterface {
 
     /**
-     * 
-     * @param {string} name
-     * @param {boolean} main
+     * @inheritDoc
      */
-    constructor(name: string, main: boolean){
-        super();
-        this.name = name;
-        this.main = main === true ? main : false;
-    }
+    public getScores() {
+        let scores = [];
 
-    /**
-     * 
-     * @param {string} number
-     * @returns {PlayerInterface}
-     */
-    public getPlayerByNumber(number: string): PlayerInterface {
-        return this.players.find(pl => {
-            return pl.getShirtNumber() === number;
+        this.players.forEach(player => {
+            if (player.getScores().length > 0) {
+                scores.concat(player.getScores());
+            }
         });
+
+        return scores;
     }
 }

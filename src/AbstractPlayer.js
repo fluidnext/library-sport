@@ -104,5 +104,13 @@ export class AbstractPlayer {
     getScores() {
         return this.scores;
     }
+    /**
+     * @param  {Array<ScoreInterface>} scores
+     * @return {PlayerInterface}
+     */
+    setScores(scores) {
+        this.scores = scores;
+        return this;
+    }
 }
 //# sourceMappingURL=AbstractPlayer.js.map

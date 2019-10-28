@@ -1,16 +1,38 @@
 import { AbstractPlayer } from "../AbstractPlayer";
 import { PlayerInterface } from "../PlayerInterface";
-import { ScoreInterface } from "../ScoreInterface";
 
+/**
+ * @class BasketPlayer
+ */
 export class BasketPlayer extends AbstractPlayer implements PlayerInterface {
 
     /**
-     * 
-     * @param {string} number
+     * @type number
      */
-    constructor(number: string) {
+    protected fouls: number = 0;
+
+    /**
+     * 
+     * @param {string} shirtNumber
+     */
+    constructor(shirtNumber?: string) {
         super();
-        this.shirtNumber = number;
+        this.shirtNumber = shirtNumber;
+    }
+
+    /**
+     * @return {number}
+     */
+    getFouls(): number {
+        return this.fouls;
+    }
+
+    /**
+     * @param {number} value
+     */
+    setFouls(value: number) {
+        this.fouls = value;
+        return this;
     }
 
     /**
@@ -23,14 +45,5 @@ export class BasketPlayer extends AbstractPlayer implements PlayerInterface {
             result += score.getValue();
         });
         return result;
-    }
-
-    /**
-     * 
-     * @returns {BasketPlayer}
-     */
-    public undoScore(): BasketPlayer{
-        this.removeScore(this.scores.length -1);
-        return this;
     }
 };

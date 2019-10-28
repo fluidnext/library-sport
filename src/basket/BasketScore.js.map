@@ -1,1 +1,1 @@
-{"version":3,"file":"BasketScore.js","sourceRoot":"","sources":["BasketScore.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,MAAM,kBAAkB,CAAC;AAGjD,MAAM,OAAO,WAAY,SAAQ,aAAa;IAE1C;;;OAGG;IACH,YAAY,KAAa;QACrB,KAAK,EAAE,CAAC;QACR,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;IACvB,CAAC;CACJ"}
+{"version":3,"file":"BasketScore.js","sourceRoot":"","sources":["BasketScore.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,MAAM,kBAAkB,CAAC;AAGjD;;GAEG;AACH,MAAM,OAAO,WAAY,SAAQ,aAAa;IAE1C;;OAEG;IACH,YAAY,KAAc;QACtB,KAAK,EAAE,CAAC;QACR,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;IACvB,CAAC;CACJ"}

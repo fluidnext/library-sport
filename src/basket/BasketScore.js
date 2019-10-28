@@ -1,7 +1,9 @@
 import { AbstractScore } from "../AbstractScore";
+/**
+ * @class BasketScore
+ */
 export class BasketScore extends AbstractScore {
     /**
-     *
      * @param {number} value
      */
     constructor(value) {

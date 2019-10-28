@@ -1,14 +1,34 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const AbstractPlayer_1 = require("../AbstractPlayer");
+/**
+ * @class BasketPlayer
+ */
 class BasketPlayer extends AbstractPlayer_1.AbstractPlayer {
     /**
      *
-     * @param {string} number
+     * @param {string} shirtNumber
      */
-    constructor(number) {
+    constructor(shirtNumber) {
         super();
-        this.shirtNumber = number;
+        /**
+         * @type number
+         */
+        this.fouls = 0;
+        this.shirtNumber = shirtNumber;
+    }
+    /**
+     * @return {number}
+     */
+    getFouls() {
+        return this.fouls;
+    }
+    /**
+     * @param {number} value
+     */
+    setFouls(value) {
+        this.fouls = value;
+        return this;
     }
     /**
      *
@@ -20,14 +40,6 @@ class BasketPlayer extends AbstractPlayer_1.AbstractPlayer {
             result += score.getValue();
         });
         return result;
-    }
-    /**
-     *
-     * @returns {BasketPlayer}
-     */
-    undoScore() {
-        this.removeScore(this.scores.length - 1);
-        return this;
     }
 }
 exports.BasketPlayer = BasketPlayer;

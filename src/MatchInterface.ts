@@ -1,6 +1,9 @@
 import { TeamInterface } from "./TeamInterface";
 
-export interface MatchInterface{
+/**
+ * @interface MatchInterface
+ */
+export interface MatchInterface {
 
     /**
      * 

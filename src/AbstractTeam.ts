@@ -1,25 +1,14 @@
 import { PlayerInterface } from './PlayerInterface';
 import { ScoreInterface } from './ScoreInterface';
+import {TeamInterface} from "./TeamInterface";
 
-export abstract class AbstractTeam{
+export abstract class AbstractTeam {
     
     /**
      * 
      * @type {string}
      */
     protected name: string;
-    
-    /**
-     * 
-     * @type {boolean}
-     */
-    protected main: boolean;
-
-    /**
-     * 
-     * @type {Array<ScoreInterface>}
-     */
-    protected scores: Array<ScoreInterface> = [];
 
     /**
      * 
@@ -28,15 +17,6 @@ export abstract class AbstractTeam{
     protected players: Array<PlayerInterface> = [];
 
     /**
-     * 
-     * @returns {boolean}
-     */
-    public isMainTeam(): boolean {
-        return this.main;
-    }
-
-    /**
-     * 
      * @param {string} name
      * @returns {AbstractTeam}
      */
@@ -46,7 +26,6 @@ export abstract class AbstractTeam{
     };
 
     /**
-     * 
      * @returns {string}
      */
     public getName(): string {
@@ -54,35 +33,11 @@ export abstract class AbstractTeam{
     };
 
     /**
-     * 
-     * @param {ScoreInterface} score
-     * @returns {AbstractTeam}
-     */
-    public addScore(score: ScoreInterface): AbstractTeam {
-        this.scores.push(score);
-        return this;
-    };
-
-    /**
-     * 
-     * @param {number} index
-     * @returns {AbstractTeam}
-     */
-    public removeScore(index: number): AbstractTeam {
-        this.scores.splice(index, 1);
-        return this;
-    }
-
-    /**
-     * 
      * @returns {Array<ScoreInterface>}
      */
-    public getScores(): Array<ScoreInterface> {
-        return this.scores;
-    };
+    public abstract getScores();
 
     /**
-     * 
      * @param {PlayerInterface} player
      * @returns {AbstractTeam}
      */
@@ -92,7 +47,27 @@ export abstract class AbstractTeam{
     };
 
     /**
-     * 
+     * @param {number} index
+     * @param {PlayerInterface} player
+     * @returns {AbstractTeam}
+     */
+    addPlayerByIndex(index: number, player: PlayerInterface): AbstractTeam {
+        this.players[index] = player;
+        return this;
+    }
+
+    /**
+     *
+     * @param {string} shirtNumber
+     * @returns {PlayerInterface}
+     */
+    public getPlayerByShirtNumber(shirtNumber: string): PlayerInterface {
+        return this.players.find(pl => {
+            return pl.getShirtNumber() === shirtNumber;
+        });
+    }
+
+    /**
      * @param {PlayerInterface} player
      * @returns {AbstractTeam}
      */

@@ -1,24 +1,19 @@
 import { AbstractTeam } from "../AbstractTeam";
+/**
+ * @class SoccerTeam
+ */
 export class SoccerTeam extends AbstractTeam {
     /**
-     *
-     * @param {string} name
-     * @param {boolean} main
+     * @inheritDoc
      */
-    constructor(name, main) {
-        super();
-        this.name = name;
-        this.main = main === true ? main : false;
-    }
-    /**
-     *
-     * @param {string} number
-     * @returns {PlayerInterface}
-     */
-    getPlayerByNumber(number) {
-        return this.players.find(pl => {
-            return pl.getShirtNumber() === number;
+    getScores() {
+        let scores = [];
+        this.players.forEach(player => {
+            if (player.getScores().length > 0) {
+                scores.concat(player.getScores());
+            }
         });
+        return scores;
     }
 }
 //# sourceMappingURL=SoccerTeam.js.map

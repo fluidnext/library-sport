@@ -2,24 +2,11 @@ export class AbstractTeam {
     constructor() {
         /**
          *
-         * @type {Array<ScoreInterface>}
-         */
-        this.scores = [];
-        /**
-         *
          * @type {Array<PlayerInterface>}
          */
         this.players = [];
     }
     /**
-     *
-     * @returns {boolean}
-     */
-    isMainTeam() {
-        return this.main;
-    }
-    /**
-     *
      * @param {string} name
      * @returns {AbstractTeam}
      */
@@ -29,7 +16,6 @@ export class AbstractTeam {
     }
     ;
     /**
-     *
      * @returns {string}
      */
     getName() {
@@ -37,34 +23,6 @@ export class AbstractTeam {
     }
     ;
     /**
-     *
-     * @param {ScoreInterface} score
-     * @returns {AbstractTeam}
-     */
-    addScore(score) {
-        this.scores.push(score);
-        return this;
-    }
-    ;
-    /**
-     *
-     * @param {number} index
-     * @returns {AbstractTeam}
-     */
-    removeScore(index) {
-        this.scores.splice(index, 1);
-        return this;
-    }
-    /**
-     *
-     * @returns {Array<ScoreInterface>}
-     */
-    getScores() {
-        return this.scores;
-    }
-    ;
-    /**
-     *
      * @param {PlayerInterface} player
      * @returns {AbstractTeam}
      */
@@ -74,7 +32,25 @@ export class AbstractTeam {
     }
     ;
     /**
+     * @param {number} index
+     * @param {PlayerInterface} player
+     * @returns {AbstractTeam}
+     */
+    addPlayerByIndex(index, player) {
+        this.players[index] = player;
+        return this;
+    }
+    /**
      *
+     * @param {string} shirtNumber
+     * @returns {PlayerInterface}
+     */
+    getPlayerByShirtNumber(shirtNumber) {
+        return this.players.find(pl => {
+            return pl.getShirtNumber() === shirtNumber;
+        });
+    }
+    /**
      * @param {PlayerInterface} player
      * @returns {AbstractTeam}
      */

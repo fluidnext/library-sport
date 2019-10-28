@@ -1,18 +1,23 @@
 import { AbstractTeam } from '../AbstractTeam';
 export class BasketTeam extends AbstractTeam {
-    /**
-     *
-     * @param {string} number
-     * @returns {PlayerInterface}
-     */
-    getPlayerByNumber(number) {
-        return this.players.find(pl => {
-            return pl.getShirtNumber() === number;
-        });
+    constructor() {
+        super(...arguments);
+        /**
+         * @type number
+         */
+        this.fouls = 0;
+        /**
+         * @type number
+         */
+        this.timeOut = 0;
+        /**
+         * @type {Array<ScoreInterface>}
+         */
+        this.scores = [];
     }
     /**
-     *
      * @returns {number}
+     * TODO change name and shift to interface
      */
     getTotalScore() {
         let result = 0;
@@ -24,6 +29,52 @@ export class BasketTeam extends AbstractTeam {
             result += playerResult;
         });
         return result;
+    }
+    /**
+     * @inheritDoc
+     */
+    getScores() {
+        let scores = [];
+        scores.concat(this.scores);
+        this.players.forEach(player => {
+            if (player.getScores().length > 0) {
+                scores.concat(player.getScores());
+            }
+        });
+        return scores;
+    }
+    /**
+     * @param {Array<ScoreInterface>} scores
+     */
+    setScores(scores) {
+        this.scores = scores;
+        return this;
+    }
+    /**
+     * @return {number}
+     */
+    getTimeOut() {
+        return this.timeOut;
+    }
+    /**
+     * @param {number} timeOut
+     */
+    setTimeOut(timeOut) {
+        this.timeOut = timeOut;
+        return this;
+    }
+    /**
+     * @return {number}
+     */
+    getFouls() {
+        return this.fouls;
+    }
+    /**
+     * @param {number} fouls
+     */
+    setFouls(fouls) {
+        this.fouls = fouls;
+        return this;
     }
 }
 //# sourceMappingURL=BasketTeam.js.map

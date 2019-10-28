@@ -1,6 +1,7 @@
 import { ScoreInterface } from "./ScoreInterface";
+import {PlayerInterface} from "./PlayerInterface";
 
-export abstract class AbstractPlayer{
+export abstract class AbstractPlayer {
     
     /**
      * 
@@ -130,5 +131,14 @@ export abstract class AbstractPlayer{
      */
     public getScores(): Array<ScoreInterface> {
         return this.scores;
+    }
+
+    /**
+     * @param  {Array<ScoreInterface>} scores
+     * @return {PlayerInterface}
+     */
+    public setScores(scores: Array<ScoreInterface>): PlayerInterface  {
+        this.scores = scores;
+        return this;
     }
 }

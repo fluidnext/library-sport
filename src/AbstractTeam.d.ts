@@ -1,5 +1,4 @@
 import { PlayerInterface } from './PlayerInterface';
-import { ScoreInterface } from './ScoreInterface';
 export declare abstract class AbstractTeam {
     /**
      *
@@ -8,60 +7,40 @@ export declare abstract class AbstractTeam {
     protected name: string;
     /**
      *
-     * @type {boolean}
-     */
-    protected main: boolean;
-    /**
-     *
-     * @type {Array<ScoreInterface>}
-     */
-    protected scores: Array<ScoreInterface>;
-    /**
-     *
      * @type {Array<PlayerInterface>}
      */
     protected players: Array<PlayerInterface>;
     /**
-     *
-     * @returns {boolean}
-     */
-    isMainTeam(): boolean;
-    /**
-     *
      * @param {string} name
      * @returns {AbstractTeam}
      */
     setName(name: string): AbstractTeam;
     /**
-     *
      * @returns {string}
      */
     getName(): string;
     /**
-     *
-     * @param {ScoreInterface} score
-     * @returns {AbstractTeam}
-     */
-    addScore(score: ScoreInterface): AbstractTeam;
-    /**
-     *
-     * @param {number} index
-     * @returns {AbstractTeam}
-     */
-    removeScore(index: number): AbstractTeam;
-    /**
-     *
      * @returns {Array<ScoreInterface>}
      */
-    getScores(): Array<ScoreInterface>;
+    abstract getScores(): any;
     /**
-     *
      * @param {PlayerInterface} player
      * @returns {AbstractTeam}
      */
     addPlayer(player: PlayerInterface): AbstractTeam;
     /**
+     * @param {number} index
+     * @param {PlayerInterface} player
+     * @returns {AbstractTeam}
+     */
+    addPlayerByIndex(index: number, player: PlayerInterface): AbstractTeam;
+    /**
      *
+     * @param {string} shirtNumber
+     * @returns {PlayerInterface}
+     */
+    getPlayerByShirtNumber(shirtNumber: string): PlayerInterface;
+    /**
      * @param {PlayerInterface} player
      * @returns {AbstractTeam}
      */

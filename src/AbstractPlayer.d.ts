@@ -1,4 +1,5 @@
 import { ScoreInterface } from "./ScoreInterface";
+import { PlayerInterface } from "./PlayerInterface";
 export declare abstract class AbstractPlayer {
     /**
      *
@@ -86,4 +87,9 @@ export declare abstract class AbstractPlayer {
      * @returns {Array<ScoreInterface>}
      */
     getScores(): Array<ScoreInterface>;
+    /**
+     * @param  {Array<ScoreInterface>} scores
+     * @return {PlayerInterface}
+     */
+    setScores(scores: Array<ScoreInterface>): PlayerInterface;
 }

@@ -1,12 +1,32 @@
 import { AbstractPlayer } from "../AbstractPlayer";
+/**
+ * @class BasketPlayer
+ */
 export class BasketPlayer extends AbstractPlayer {
     /**
      *
-     * @param {string} number
+     * @param {string} shirtNumber
      */
-    constructor(number) {
+    constructor(shirtNumber) {
         super();
-        this.shirtNumber = number;
+        /**
+         * @type number
+         */
+        this.fouls = 0;
+        this.shirtNumber = shirtNumber;
+    }
+    /**
+     * @return {number}
+     */
+    getFouls() {
+        return this.fouls;
+    }
+    /**
+     * @param {number} value
+     */
+    setFouls(value) {
+        this.fouls = value;
+        return this;
     }
     /**
      *
@@ -18,14 +38,6 @@ export class BasketPlayer extends AbstractPlayer {
             result += score.getValue();
         });
         return result;
-    }
-    /**
-     *
-     * @returns {BasketPlayer}
-     */
-    undoScore() {
-        this.removeScore(this.scores.length - 1);
-        return this;
     }
 }
 ;
