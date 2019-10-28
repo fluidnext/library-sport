@@ -89,4 +89,6 @@ export class BasketTeam extends AbstractTeam implements TeamInterface {
         this.fouls = fouls;
         return this;
     }
+
+
 }
