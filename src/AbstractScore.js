@@ -1,3 +1,6 @@
+/**
+ * @class AbstractScore
+ */
 export class AbstractScore {
     /**
      *

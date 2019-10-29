@@ -1,7 +1,10 @@
+/**
+ * @interface ScoreInterface
+ */
 export interface ScoreInterface {
     /**
      *
-     * @param {number} value
+     * @param {number} value
      * @returns {ScoreInterface}
      */
     setValue(value: number): ScoreInterface;

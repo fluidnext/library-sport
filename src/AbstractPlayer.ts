@@ -1,6 +1,9 @@
 import { ScoreInterface } from "./ScoreInterface";
 import {PlayerInterface} from "./PlayerInterface";
 
+/**
+ * @class AbstractPlayer
+ */
 export abstract class AbstractPlayer {
     
     /**

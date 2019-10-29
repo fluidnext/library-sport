@@ -1,3 +1,6 @@
+/**
+ * @class AbstractTeam
+ */
 export class AbstractTeam {
     constructor() {
         /**

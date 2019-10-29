@@ -1,4 +1,7 @@
 import { AbstractTeam } from '../AbstractTeam';
+/**
+ * @class BasketTeam
+ */
 export class BasketTeam extends AbstractTeam {
     constructor() {
         super(...arguments);

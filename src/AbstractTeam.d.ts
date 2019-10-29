@@ -1,4 +1,7 @@
 import { PlayerInterface } from './PlayerInterface';
+/**
+ * @class AbstractTeam
+ */
 export declare abstract class AbstractTeam {
     /**
      *

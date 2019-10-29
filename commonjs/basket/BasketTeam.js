@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const AbstractTeam_1 = require("../AbstractTeam");
+/**
+ * @class BasketTeam
+ */
 class BasketTeam extends AbstractTeam_1.AbstractTeam {
     constructor() {
         super(...arguments);

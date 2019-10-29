@@ -1,4 +1,7 @@
 import { AbstractPlayer } from "../AbstractPlayer";
+/**
+ * @class SoccerPlayer
+ */
 export class SoccerPlayer extends AbstractPlayer {
     /**
      *

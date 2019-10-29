@@ -1,8 +1,10 @@
 import { AbstractTeam } from '../AbstractTeam';
-import { PlayerInterface } from '../PlayerInterface';
 import { TeamInterface } from '../TeamInterface';
 import { ScoreInterface } from '../ScoreInterface';
 
+/**
+ * @class BasketTeam
+ */
 export class BasketTeam extends AbstractTeam implements TeamInterface {
 
     /**

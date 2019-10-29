@@ -1,3 +1,6 @@
+/**
+ * @class AbstractMatch
+ */
 export class AbstractMatch {
     /**
      *

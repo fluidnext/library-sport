@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const AbstractPlayer_1 = require("../AbstractPlayer");
+/**
+ * @class SoccerPlayer
+ */
 class SoccerPlayer extends AbstractPlayer_1.AbstractPlayer {
     /**
      *

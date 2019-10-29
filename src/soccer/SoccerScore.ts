@@ -1,6 +1,9 @@
 import { AbstractScore } from "../AbstractScore";
 import { ScoreInterface } from "../ScoreInterface";
 
+/**
+ * @class SoccerScore
+ */
 export class SoccerScore extends AbstractScore implements ScoreInterface {
 
     /**

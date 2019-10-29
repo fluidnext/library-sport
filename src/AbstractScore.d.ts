@@ -1,3 +1,6 @@
+/**
+ * @class AbstractScore
+ */
 export declare abstract class AbstractScore {
     /**
      *

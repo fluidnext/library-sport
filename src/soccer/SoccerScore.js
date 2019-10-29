@@ -1,4 +1,7 @@
 import { AbstractScore } from "../AbstractScore";
+/**
+ * @class SoccerScore
+ */
 export class SoccerScore extends AbstractScore {
     /**
      *

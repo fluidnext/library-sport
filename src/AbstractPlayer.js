@@ -1,3 +1,6 @@
+/**
+ * @class AbstractPlayer
+ */
 export class AbstractPlayer {
     constructor() {
         /**

@@ -1,6 +1,9 @@
 import { PlayerInterface } from "./PlayerInterface";
 import { ScoreInterface } from "./ScoreInterface";
 
+/**
+ * @interface TeamInterface
+ */
 export interface TeamInterface {
 
     /**

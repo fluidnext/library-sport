@@ -1,4 +1,7 @@
 import { TeamInterface } from './TeamInterface';
+/**
+ * @class AbstractMatch
+ */
 export declare abstract class AbstractMatch {
     /**
      *

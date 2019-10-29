@@ -1,6 +1,9 @@
 import { TeamInterface } from './TeamInterface';
 
-export abstract class AbstractMatch{
+/**
+ * @class AbstractMatch
+ */
+export abstract class AbstractMatch {
 
     /**
      * 

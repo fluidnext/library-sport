@@ -1,6 +1,9 @@
 import { AbstractTeam } from '../AbstractTeam';
 import { TeamInterface } from '../TeamInterface';
 import { ScoreInterface } from '../ScoreInterface';
+/**
+ * @class BasketTeam
+ */
 export declare class BasketTeam extends AbstractTeam implements TeamInterface {
     /**
      * @type number
