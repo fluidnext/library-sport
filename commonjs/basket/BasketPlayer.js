@@ -43,4 +43,3 @@ class BasketPlayer extends AbstractPlayer_1.AbstractPlayer {
     }
 }
 exports.BasketPlayer = BasketPlayer;
-;

@@ -12,7 +12,7 @@ export class BasketPlayer extends AbstractPlayer implements PlayerInterface {
     protected fouls: number = 0;
 
     /**
-     * 
+     *
      * @param {string} shirtNumber
      */
     constructor(shirtNumber?: string) {
@@ -36,7 +36,7 @@ export class BasketPlayer extends AbstractPlayer implements PlayerInterface {
     }
 
     /**
-     * 
+     *
      * @returns {number}
      */
     public getTotalScore(): number {
@@ -46,4 +46,4 @@ export class BasketPlayer extends AbstractPlayer implements PlayerInterface {
         });
         return result;
     }
-};
+}

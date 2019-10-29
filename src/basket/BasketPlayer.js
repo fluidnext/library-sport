@@ -40,5 +40,4 @@ export class BasketPlayer extends AbstractPlayer {
         return result;
     }
 }
-;
 //# sourceMappingURL=BasketPlayer.js.map
