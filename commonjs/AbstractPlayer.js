@@ -7,6 +7,11 @@ class AbstractPlayer {
     constructor() {
         /**
          *
+         * @type {string}
+         */
+        this.shirtNumber = '';
+        /**
+         *
          * @type {Array<ScoreInterface>}
          */
         this.scores = [];

@@ -28,7 +28,7 @@ export abstract class AbstractPlayer {
      * 
      * @type {string}
      */
-    protected shirtNumber: string;
+    protected shirtNumber: string = '';
 
     /**
      * 
