@@ -4,6 +4,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @class AbstractScore
  */
 class AbstractScore {
+    constructor() {
+        /**
+         *
+         * @type {number}
+         */
+        this.value = 0;
+    }
     /**
      *
      * @param {number} value

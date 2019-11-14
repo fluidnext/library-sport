@@ -5,6 +5,11 @@ export class AbstractTeam {
     constructor() {
         /**
          *
+         * @type {string}
+         */
+        this.name = '';
+        /**
+         *
          * @type {Array<PlayerInterface>}
          */
         this.players = [];
