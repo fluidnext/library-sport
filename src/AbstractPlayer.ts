@@ -10,25 +10,25 @@ export abstract class AbstractPlayer {
      * 
      * @type {string}
      */
-    protected firstName: string;
+    protected firstName: string = '';
 
     /**
      * 
      * @type {string}
      */
-    protected lastName: string;
+    protected lastName: string = '';
 
     /**
      * 
      * @type {string}
      */
-    protected shirtName: string;
+    protected shirtName: string = '';
     
     /**
      * 
      * @type {string}
      */
-    protected shirtNumber: string;
+    protected shirtNumber: string = '';
 
     /**
      * 

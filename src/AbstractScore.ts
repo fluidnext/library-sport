@@ -7,7 +7,7 @@ export abstract class AbstractScore {
      * 
      * @type {number}
      */
-    protected value: number;
+    protected value: number = 0;
 
     /**
      * 

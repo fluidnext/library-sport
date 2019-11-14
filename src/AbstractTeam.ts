@@ -10,7 +10,7 @@ export abstract class AbstractTeam {
      * 
      * @type {string}
      */
-    protected name: string;
+    protected name: string = '';
 
     /**
      * 
