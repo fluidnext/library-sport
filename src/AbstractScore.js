@@ -2,6 +2,13 @@
  * @class AbstractScore
  */
 export class AbstractScore {
+    constructor() {
+        /**
+         *
+         * @type {number}
+         */
+        this.value = 0;
+    }
     /**
      *
      * @param {number} value

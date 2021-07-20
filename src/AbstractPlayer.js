@@ -7,6 +7,21 @@ export class AbstractPlayer {
          *
          * @type {string}
          */
+        this.firstName = '';
+        /**
+         *
+         * @type {string}
+         */
+        this.lastName = '';
+        /**
+         *
+         * @type {string}
+         */
+        this.shirtName = '';
+        /**
+         *
+         * @type {string}
+         */
         this.shirtNumber = '';
         /**
          *
