@@ -7,12 +7,12 @@ const AbstractScore_1 = require("../AbstractScore");
 class SoccerScore extends AbstractScore_1.AbstractScore {
     /**
      *
-     * @param {Date} scoreTime
+     * @param {Object} infoScore
      */
-    constructor(scoreTime) {
+    constructor(infoScore) {
         super();
         this.value = 1;
-        this.time = scoreTime;
+        this.info = infoScore;
     }
 }
 exports.SoccerScore = SoccerScore;
