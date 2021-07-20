@@ -8,11 +8,17 @@ export class SoccerScore extends AbstractScore implements ScoreInterface {
 
     /**
      * 
-     * @param {Date} scoreTime
+     * @type {Object}
      */
-    constructor(scoreTime: Date){
+    protected info: Object;
+
+    /**
+     * 
+     * @param {Object} infoScore
+     */
+    constructor(infoScore: Object){
         super();
         this.value = 1;
-        this.time = scoreTime;
+        this.info = infoScore;
     }
 }

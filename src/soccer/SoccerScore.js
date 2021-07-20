@@ -5,12 +5,12 @@ import { AbstractScore } from "../AbstractScore";
 export class SoccerScore extends AbstractScore {
     /**
      *
-     * @param {Date} scoreTime
+     * @param {Object} infoScore
      */
-    constructor(scoreTime) {
+    constructor(infoScore) {
         super();
         this.value = 1;
-        this.time = scoreTime;
+        this.info = infoScore;
     }
 }
 //# sourceMappingURL=SoccerScore.js.map
